@@ -21,7 +21,7 @@ Just paste your repository URL, add a custom title, and get beautifully formatte
 
 ## How to Use
 
-1. Go to **[relog-inky.vercel.app/](https://relog.dev)**
+1. Go to **[https://relog-inky.vercel.app](https://relog-inky.vercel.app/)**
 2. Paste any public GitHub repository URL  
    Example: `https://github.com/vercel/next.js`
 3. Enter a custom release title
