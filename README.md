@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Relog
 
-## Getting Started
+**Professional release notes — generated instantly with AI**  
+No login · No setup · No account required
 
-First, run the development server:
+Relog is a **free SaaS tool** that instantly creates clean, structured, and professional release notes from any public GitHub repository.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Just paste your repository URL, add a custom title, and get beautifully formatted changelog content powered by modern AI — ready to edit, preview, and export.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Zero authentication — complete privacy, no data is stored
+- Instant analysis of recent commits from any public GitHub repository
+- AI-powered smart categorization (Features · Bug Fixes · Performance · Documentation · Breaking Changes · Chores)
+- Full support for Conventional Commits (feat, fix, refactor, breaking changes, etc.)
+- Beautiful real-time WYSIWYG editor with live Markdown preview
+- One-click export as `.md` file or copy to clipboard
+- Clean output optimized for GitHub Releases, changelogs, announcements & blogs
+- Extremely fast
+- 100% free for everyone
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How to Use
 
-## Learn More
+1. Go to **[relog-inky.vercel.app/](https://relog.dev)**
+2. Paste any public GitHub repository URL  
+   Example: `https://github.com/vercel/next.js`
+3. Enter a custom release title
+4. Click **Generate**
+5. Review, edit in the built-in editor, and export
 
-To learn more about Next.js, take a look at the following resources:
+That's it — no installation, no API keys, no GitHub login required.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- Modern AI model integration
+- GitHub REST API (public endpoints)
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome!  
+Please open an issue first to discuss what you would like to change.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
+
+---
+
+Made with focus on developer experience and simplicity  
+**Relog** — Because your commits deserve to shine.
