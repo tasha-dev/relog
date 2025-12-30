@@ -10,3 +10,7 @@ export interface RootLayoutProps {
 export interface LetterGlitchBgProps {
   className?: string;
 }
+
+export interface HeaderProps {
+  className?: string;
+}

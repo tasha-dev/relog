@@ -1,6 +1,6 @@
 // Codes by mahdi tasha
 // Importing part
-import LetterGlitchBg from "@/component/letterGlitchBg";
+import Header from "@/component/header";
 import Hero from "@/component/section/home/hero";
 import { JSX } from "react";
 
@@ -9,6 +9,7 @@ export default function HomePage(): JSX.Element {
   // Returning JSX
   return (
     <>
+      <Header />
       <Hero />
     </>
   );

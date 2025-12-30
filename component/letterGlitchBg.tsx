@@ -22,7 +22,6 @@ export default function LetterGlitchBg({
     >
       <LetterGlitch
         glitchColors={["#b65cff", "#61dca3", "#7e47ff"]}
-        characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789"
         glitchSpeed={10}
         centerVignette
         outerVignette={false}

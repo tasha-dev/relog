@@ -83,7 +83,7 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
       <ThemeProvider>
         <body
           className={cn(
-            "overflow-x-hidden overflow-y-auto min-h-dvh bg-background text-foreground prose dark:prose-invert",
+            "overflow-x-hidden overflow-y-auto min-h-dvh bg-background text-foreground prose dark:prose-invert prose-neutral",
             geistFont.className,
           )}
         >
