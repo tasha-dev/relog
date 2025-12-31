@@ -7,6 +7,7 @@ import { JSX } from "react";
 import "@/app/globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/util";
+import { Toaster } from "@/component/ui/sonner";
 
 // Defining metadata
 export const metadata: Metadata = {
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
             geistFont.className,
           )}
         >
+          <Toaster />
           {children}
         </body>
       </ThemeProvider>

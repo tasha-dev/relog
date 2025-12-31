@@ -1,6 +1,7 @@
 // Codes by mahdi tasha
 // Importing part
 import { ReactNode } from "react";
+import { DataType, FetchStatusType } from "./general";
 
 // Creating and exporting type of props for components
 export interface RootLayoutProps {
@@ -27,5 +28,19 @@ export interface StepProps {
   data: {
     title: string;
     description: string;
+  };
+}
+
+export interface GenerateFormProps {
+  className?: string;
+  onStatusChange?: (status: FetchStatusType, data?: DataType) => void;
+}
+
+export interface MarkdownEditorProps {
+  disabled?: boolean;
+  status: FetchStatusType;
+  data?: {
+    title: string;
+    content: string;
   };
 }
