@@ -1,6 +1,7 @@
 // Codes by mahdi tasha
 // Importing part
 import Header from "@/component/header";
+import CTA from "@/component/section/home/cta";
 import Hero from "@/component/section/home/hero";
 import HowItWorks from "@/component/section/home/howItWorks";
 import KeyBenefits from "@/component/section/home/keyBenefits";
@@ -17,6 +18,7 @@ export default function HomePage(): JSX.Element {
       <KeyBenefits />
       <PerfectFor />
       <HowItWorks />
+      <CTA />
     </>
   );
 }
