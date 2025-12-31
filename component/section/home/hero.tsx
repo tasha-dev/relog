@@ -9,7 +9,7 @@ export default function Hero(): JSX.Element {
   return (
     <section className="relative min-h-dvh w-dvw">
       <LetterGlitchBg className="opacity-75" />
-      <div className="w-dvw min-h-dvh flex items-center justify-center relative z-10">
+      <main className="w-dvw min-h-dvh flex items-center justify-center relative z-10">
         <div className="max-w-3xl mx-auto p-4">
           <h1 className="lg:text-center mb-2">
             Instant, AI-powered release notes
@@ -23,7 +23,7 @@ export default function Hero(): JSX.Element {
             changelog content using modern AI.
           </p>
         </div>
-      </div>
+      </main>
     </section>
   );
 }
