@@ -11,7 +11,7 @@ import Link from "next/link";
 import LogoImage from "@/image/logo.png";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Button } from "./ui/button";
-import { Code, SunMoon } from "lucide-react";
+import { Code, SunMoon, Terminal } from "lucide-react";
 import { useTheme } from "next-themes";
 import useScrolled from "@/hook/useScrolled";
 
@@ -46,6 +46,16 @@ export default function Header({ className }: HeaderProps): JSX.Element {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button asChild size={"icon-lg"}>
+                <Link href="/app">
+                  <Terminal />
+                </Link>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>Start Generating Release Notes</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button asChild size={"icon-lg"}>
                 <Link href="https://tasha.vercel.app">
                   <Code />
                 </Link>
@@ -53,6 +63,7 @@ export default function Header({ className }: HeaderProps): JSX.Element {
             </TooltipTrigger>
             <TooltipContent>Mahdi Tasha</TooltipContent>
           </Tooltip>
+
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
