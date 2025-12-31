@@ -4,6 +4,7 @@ import Header from "@/component/header";
 import Hero from "@/component/section/home/hero";
 import HowItWorks from "@/component/section/home/howItWorks";
 import KeyBenefits from "@/component/section/home/keyBenefits";
+import PerfectFor from "@/component/section/home/perfectFor";
 import { JSX } from "react";
 
 // Creating and exporting Home page as default
@@ -13,8 +14,9 @@ export default function HomePage(): JSX.Element {
     <>
       <Header />
       <Hero />
-      <HowItWorks />
       <KeyBenefits />
+      <PerfectFor />
+      <HowItWorks />
     </>
   );
 }

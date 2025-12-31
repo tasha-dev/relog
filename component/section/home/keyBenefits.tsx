@@ -2,7 +2,7 @@
 // Importing part
 import { JSX } from "react";
 
-// Defining steps to render
+// Defining keyBenefits to render
 const keyBenefits: string[] = [
   "Zero authentication — complete privacy, no data stored",
   "AI understands Conventional Commits, scopes, breaking changes & more",
