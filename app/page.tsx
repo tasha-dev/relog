@@ -1,5 +1,6 @@
 // Codes by mahdi tasha
 // Importing part
+import Footer from "@/component/footer";
 import Header from "@/component/header";
 import CTA from "@/component/section/home/cta";
 import Hero from "@/component/section/home/hero";
@@ -12,13 +13,14 @@ import { JSX } from "react";
 export default function HomePage(): JSX.Element {
   // Returning JSX
   return (
-    <>
+    <div className="space-y-4">
       <Header />
       <Hero />
       <KeyBenefits />
       <PerfectFor />
       <HowItWorks />
       <CTA />
-    </>
+      <Footer />
+    </div>
   );
 }
