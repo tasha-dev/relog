@@ -39,15 +39,24 @@ export default function GenerateForm({
 
   // Defining submit handler
   const onSubmit: SubmitHandler<formType> = async (data) => {
-    onStatusChange?.("loading-repo", undefined);
+    onStatusChange?.({
+      status: "loading-repo",
+    });
+
     await sleep(2000);
 
-    onStatusChange?.("loading-ai", undefined);
+    onStatusChange?.({
+      status: "loading-ai",
+    });
+
     await sleep(3000);
 
-    onStatusChange?.("success", {
-      content: "### hello world",
-      title: data.title,
+    onStatusChange?.({
+      status: "success",
+      data: {
+        content: "### Hello world",
+        title: data.title,
+      },
     });
 
     toast.success(

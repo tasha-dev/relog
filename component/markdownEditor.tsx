@@ -8,48 +8,16 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Button } from "./ui/button";
 import { Copy, Download } from "lucide-react";
 import { MarkdownEditorProps } from "@/type/component";
-import { cn, copyVal, downloadMarkdown } from "@/lib/util";
-import ShinyTextAnimation from "./shinyTextAnimation";
+import { copyVal, downloadMarkdown } from "@/lib/util";
+import MarkdownRenderer from "./markdownRenderer";
 
 // Creating and exporting MarkdownEditor component as default
 export default function MarkdownEditor({
-  status = "loading-repo",
-  data,
-  disabled = false,
+  generation,
 }: MarkdownEditorProps): JSX.Element {
-  // Defining inner component
-  function InnerMarkdown() {
-    // Conditional rendering
-    if (disabled) {
-      if (data) {
-        return <p className="text-center my-0">Disabled</p>;
-      } else {
-        return (
-          <p className="text-center my-0">There is no content to be shown</p>
-        );
-      }
-    } else {
-      if (status === "loading-repo") {
-        return (
-          <ShinyTextAnimation
-            text="Analyzing repository…"
-            className="text-lg"
-          />
-        );
-      } else if (status === "loading-ai") {
-        return (
-          <ShinyTextAnimation
-            text="Fetching commits and generating notes with AI"
-            className="text-lg"
-          />
-        );
-      } else if (status === "error") {
-        return "ERROR";
-      } else {
-        return data?.content;
-      }
-    }
-  }
+  // Defining variables
+  const disabled =
+    generation.status !== "success" || generation.data === undefined;
 
   // Returning JSX
   return (
@@ -60,10 +28,10 @@ export default function MarkdownEditor({
         </span>
         <div className="flex items-center justify-between gap-3 shrink-0">
           <Tooltip>
-            <TooltipTrigger asChild disabled={disabled || !data}>
+            <TooltipTrigger asChild disabled={disabled}>
               <Button
                 size="icon-lg"
-                onClick={() => data && copyVal(data.content)}
+                onClick={() => !disabled && copyVal(generation.data.content)}
               >
                 <Copy />
               </Button>
@@ -71,32 +39,35 @@ export default function MarkdownEditor({
             <TooltipContent>Copy the result</TooltipContent>
           </Tooltip>
           <Tooltip>
-            <TooltipTrigger asChild disabled={disabled || !data}>
+            <TooltipTrigger asChild disabled={disabled}>
               <Button
                 size="icon-lg"
+                disabled={disabled}
                 onClick={() =>
-                  data && downloadMarkdown(data.content, `${data.title}.md`)
+                  !disabled &&
+                  downloadMarkdown(
+                    generation.data.content,
+                    `${generation.data.title}.md`,
+                  )
                 }
               >
                 <Download />
               </Button>
             </TooltipTrigger>
-            <TooltipContent>
-              {data?.title
-                ? `Export your content as ${data.title}.md`
-                : `Export you content in md format`}
-            </TooltipContent>
+            {!disabled && (
+              <TooltipContent>
+                {`Export your content as ${generation.data.title}.md`}
+              </TooltipContent>
+            )}
           </Tooltip>
         </div>
       </div>
       <div
-        className={cn(
-          "rounded-lg p-3 border border-foreground/10 bg-foreground/5 min-h-[200px] transition-all duration-500",
-          disabled && "flex items-center justify-center opacity-50",
-          disabled || (status.startsWith("loading") && "pointer-events-none"),
-        )}
+        className={
+          "rounded-lg p-3 border border-foreground/10 bg-foreground/5 min-h-[200px] transition-all duration-500"
+        }
       >
-        <InnerMarkdown />
+        <MarkdownRenderer generation={generation} />
       </div>
     </div>
   );
