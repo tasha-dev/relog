@@ -54,7 +54,7 @@ export default function GenerateForm({
     onStatusChange?.({
       status: "success",
       data: {
-        content: "### Hello world",
+        content: "---",
         title: data.title,
       },
     });
@@ -86,6 +86,7 @@ export default function GenerateForm({
               <FormControl>
                 <Input
                   placeholder="https://github.com/username/repository"
+                  type="url"
                   {...field}
                 />
               </FormControl>
@@ -106,6 +107,7 @@ export default function GenerateForm({
               <FormControl>
                 <Input
                   placeholder="Release v2.1.0 – December 2025"
+                  type="text"
                   {...field}
                 />
               </FormControl>

@@ -3,7 +3,7 @@
 "use client";
 
 // Importing part
-import { JSX } from "react";
+import { JSX, useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Button } from "./ui/button";
 import { Copy, Download } from "lucide-react";
@@ -15,9 +15,16 @@ import MarkdownRenderer from "./markdownRenderer";
 export default function MarkdownEditor({
   generation,
 }: MarkdownEditorProps): JSX.Element {
+  // Defining hook
+  const [content, setContent] = useState<string | undefined>(
+    generation.status === "success" ? generation.data.content : undefined,
+  );
+
   // Defining variables
   const disabled =
-    generation.status !== "success" || generation.data === undefined;
+    generation.status !== "success" ||
+    generation.data === undefined ||
+    !content;
 
   // Returning JSX
   return (
@@ -31,7 +38,7 @@ export default function MarkdownEditor({
             <TooltipTrigger asChild disabled={disabled}>
               <Button
                 size="icon-lg"
-                onClick={() => !disabled && copyVal(generation.data.content)}
+                onClick={() => !disabled && copyVal(content)}
               >
                 <Copy />
               </Button>
@@ -45,10 +52,7 @@ export default function MarkdownEditor({
                 disabled={disabled}
                 onClick={() =>
                   !disabled &&
-                  downloadMarkdown(
-                    generation.data.content,
-                    `${generation.data.title}.md`,
-                  )
+                  downloadMarkdown(content, `${generation.data.title}.md`)
                 }
               >
                 <Download />
@@ -62,13 +66,7 @@ export default function MarkdownEditor({
           </Tooltip>
         </div>
       </div>
-      <div
-        className={
-          "rounded-lg p-3 border border-foreground/10 bg-foreground/5 min-h-[200px] transition-all duration-500"
-        }
-      >
-        <MarkdownRenderer generation={generation} />
-      </div>
+      <MarkdownRenderer generation={generation} onChange={setContent} />
     </div>
   );
 }

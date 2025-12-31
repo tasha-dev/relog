@@ -43,4 +43,5 @@ export interface MarkdownEditorProps {
 
 export interface MarkdownRenderProps {
   generation: GenerationType;
+  onChange?: (content: string) => void;
 }
