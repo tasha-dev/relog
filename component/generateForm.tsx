@@ -23,6 +23,7 @@ import { toast } from "sonner";
 import z from "zod";
 import { GenerateFormProps } from "@/type/component";
 import { Loader2, Plus } from "lucide-react";
+import GenerateNote from "@/lib/generateNote";
 
 // Defining type of form schema
 type formType = z.infer<typeof formSchema>;
@@ -39,34 +40,27 @@ export default function GenerateForm({
 
   // Defining submit handler
   const onSubmit: SubmitHandler<formType> = async (data) => {
-    onStatusChange?.({
-      status: "loading-repo",
-    });
-
-    await sleep(2000);
-
-    onStatusChange?.({
-      status: "loading-ai",
-    });
-
-    await sleep(3000);
-
-    onStatusChange?.({
-      status: "success",
+    await GenerateNote({
+      onStatusChange,
       data: {
-        content: "---",
+        repoUrl: data.repoUrl,
         title: data.title,
       },
-    });
-
-    toast.success(
-      "Your Release Notes are Ready. Review, edit, and export below",
-    );
+    })
+      .then(() => {
+        toast.success(
+          "Your Release Notes are Ready. Review, edit, and export below",
+        );
+      })
+      .catch(() => {
+        toast.error(
+          "An unexpected error occurred during note generation. Please try again or use different instructions.",
+        );
+      });
 
     // toast.error("The provided URL does not appear to be a valid public GitHub repository.")
     // toast.error("Repository not found or private. Please ensure the URL is correct and the repository is public.")
     // toast.error("We’re temporarily unable to fetch data from GitHub. Please try again in a moment.")
-    // toast.error("An unexpected error occurred during note generation. Please try again or use different instructions.")
   };
 
   // Returning JSX
