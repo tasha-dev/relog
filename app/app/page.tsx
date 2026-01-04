@@ -5,9 +5,12 @@
 // Importing part
 import { JSX, useState } from "react";
 import GenerateForm from "@/component/generateForm";
-import MarkdownEditor from "@/component/markdownEditor";
 import { GenerationType } from "@/type/general";
 import Header from "@/component/header";
+import dynamic from "next/dynamic";
+const MarkdownEditor = dynamic(() => import("@/component/markdownEditor"), {
+  ssr: false,
+});
 
 // Creating and exporting AppPage page as default
 export default function AppPage(): JSX.Element {
