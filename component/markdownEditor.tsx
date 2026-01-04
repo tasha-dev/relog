@@ -3,7 +3,7 @@
 "use client";
 
 // Importing part
-import { JSX, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Button } from "./ui/button";
 import { Copy, Download } from "lucide-react";
@@ -16,15 +16,20 @@ export default function MarkdownEditor({
   generation,
 }: MarkdownEditorProps): JSX.Element {
   // Defining hook
-  const [content, setContent] = useState<string | undefined>(
-    generation.status === "success" ? generation.data.content : undefined,
-  );
+  const [content, setContent] = useState<string | undefined>(undefined);
 
   // Defining variables
   const disabled =
     generation.status !== "success" ||
     generation.data === undefined ||
     !content;
+
+  // Using useEffect to set initial value of content
+  useEffect(() => {
+    if (generation.status === "success") {
+      setContent(generation.data.content);
+    }
+  }, [generation.status])
 
   // Returning JSX
   return (
