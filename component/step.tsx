@@ -1,7 +1,6 @@
 // Codes by mahdi tasha
 // Importing part
 import { StepProps } from "@/type/component";
-import { JSX } from "react";
 import ShinyTextAnimation from "@/component/shinyTextAnimation";
 import { MoveDown } from "lucide-react";
 import {
@@ -17,7 +16,7 @@ export default function Step({
   index,
   hasDownArrow = false,
   className,
-}: StepProps): JSX.Element {
+}: StepProps) {
   // Returning JSX
   return (
     <div className={className}>

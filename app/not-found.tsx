@@ -4,10 +4,9 @@ import Footer from "@/component/footer";
 import Header from "@/component/header";
 import { Button } from "@/component/ui/button";
 import Link from "next/link";
-import { JSX } from "react";
 
 // Creating and exporting 404 page as default
-export default function NotFoundPage(): JSX.Element {
+export default function NotFoundPage() {
   // Returning JSX
   return (
     <div className="space-y-4">

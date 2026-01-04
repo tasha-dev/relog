@@ -1,7 +1,4 @@
 // Codes by mahdi tasha
-// Importing part
-import { JSX } from "react";
-
 // Defining keyBenefits to render
 const keyBenefits: string[] = [
   "Zero authentication — complete privacy, no data stored",
@@ -14,7 +11,7 @@ const keyBenefits: string[] = [
 ];
 
 // Creating and exporting KeyBenefits section component as default
-export default function KeyBenefits(): JSX.Element {
+export default function KeyBenefits() {
   // Returning JSX
   return (
     <section className="w-dvw">

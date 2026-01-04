@@ -3,7 +3,6 @@
 "use client";
 
 // Importing part
-import { JSX } from "react";
 import { cn } from "@/lib/util";
 import { HeaderProps } from "@/type/component";
 import Image from "next/image";
@@ -16,7 +15,7 @@ import { useTheme } from "next-themes";
 import useScrolled from "@/hook/useScrolled";
 
 // Creating and exporting Header component as default
-export default function Header({ className }: HeaderProps): JSX.Element {
+export default function Header({ className }: HeaderProps) {
   // Defining hooks
   const { setTheme } = useTheme();
   const scrolled = useScrolled();

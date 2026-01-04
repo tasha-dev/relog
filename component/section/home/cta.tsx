@@ -3,10 +3,9 @@
 import { Button } from "@/component/ui/button";
 import { Terminal } from "lucide-react";
 import Link from "next/link";
-import { JSX } from "react";
 
 // Creating and exporting CTA section component as default
-export default function CTA(): JSX.Element {
+export default function CTA() {
   // Returning JSX
   return (
     <section className="w-dvw">

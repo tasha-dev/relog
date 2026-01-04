@@ -3,11 +3,10 @@
 "use client";
 
 // Importing part
-import { JSX } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { generateRelaseNoteFormSchema as formSchema } from "@/lib/formSchemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { cn, sleep } from "@/lib/util";
+import { cn } from "@/lib/util";
 import {
   Form,
   FormControl,
@@ -32,7 +31,7 @@ type formType = z.infer<typeof formSchema>;
 export default function GenerateForm({
   className,
   onStatusChange,
-}: GenerateFormProps): JSX.Element {
+}: GenerateFormProps) {
   // Defining hooks
   const form = useForm<formType>({
     resolver: zodResolver(formSchema),

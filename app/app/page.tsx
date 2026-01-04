@@ -3,7 +3,7 @@
 "use client";
 
 // Importing part
-import { JSX, useState } from "react";
+import { useState } from "react";
 import GenerateForm from "@/component/generateForm";
 import { GenerationType } from "@/type/general";
 import Header from "@/component/header";
@@ -13,7 +13,7 @@ const MarkdownEditor = dynamic(() => import("@/component/markdownEditor"), {
 });
 
 // Creating and exporting AppPage page as default
-export default function AppPage(): JSX.Element {
+export default function AppPage() {
   // Defining hooks
   const [generation, setGeneration] = useState<GenerationType>({
     status: "idle",

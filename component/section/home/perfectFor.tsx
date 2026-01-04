@@ -1,7 +1,4 @@
 // Codes by mahdi tasha
-// Importing part
-import { JSX } from "react";
-
 // Defining data to render
 const data: string[] = [
   "Open source maintainers",
@@ -11,7 +8,7 @@ const data: string[] = [
 ];
 
 // Creating and exporting PerfectFor section component as default
-export default function PerfectFor(): JSX.Element {
+export default function PerfectFor() {
   // Returning JSX
   return (
     <section className="w-dvw">

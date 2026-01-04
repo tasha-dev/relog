@@ -5,13 +5,10 @@
 // Importing part
 import { cn } from "@/lib/util";
 import { LetterGlitchBgProps } from "@/type/component";
-import { JSX } from "react";
 import LetterGlitch from "./ui/letterGlitch";
 
 // Creating and exporting LetterGlitchBg component as default
-export default function LetterGlitchBg({
-  className,
-}: LetterGlitchBgProps): JSX.Element {
+export default function LetterGlitchBg({ className }: LetterGlitchBgProps) {
   // Returning JSX
   return (
     <div

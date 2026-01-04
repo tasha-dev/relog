@@ -1,10 +1,9 @@
 // Codes by mahdi tasha
 // Importing part
 import LetterGlitchBg from "@/component/letterGlitchBg";
-import { JSX } from "react";
 
 // Creating and exporting Hero section component as default
-export default function Hero(): JSX.Element {
+export default function Hero() {
   // Returning JSX
   return (
     <section className="relative min-h-dvh w-dvw">

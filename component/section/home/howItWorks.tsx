@@ -1,7 +1,6 @@
 // Codes by mahdi tasha
 // Importing part
 import Step from "@/component/step";
-import { JSX } from "react";
 
 // Defining steps to render
 const steps: {
@@ -26,7 +25,7 @@ const steps: {
 ];
 
 // Creating and exporting HowItWorks section component as default
-export default function HowItWorks(): JSX.Element {
+export default function HowItWorks() {
   // Returning JSX
   return (
     <section className="w-dvw">

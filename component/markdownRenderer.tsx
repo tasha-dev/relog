@@ -3,7 +3,7 @@
 "use client";
 
 // Importing part
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import ShinyTextAnimation from "./shinyTextAnimation";
 import { MarkdownRenderProps } from "@/type/component";
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -14,7 +14,7 @@ import StarterKit from "@tiptap/starter-kit";
 export default function MarkdownRenderer({
   generation,
   onChange,
-}: MarkdownRenderProps): ReactNode {
+}: MarkdownRenderProps) {
   // Defining hooks
   const editor = useEditor({
     extensions: [StarterKit, Markdown.configure({})],

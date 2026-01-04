@@ -3,7 +3,6 @@
 import { RootLayoutProps } from "@/type/component";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import { JSX } from "react";
 import "@/app/globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/util";
@@ -77,7 +76,7 @@ const geistFont = Geist({
 });
 
 // Creating and exporting RootLayout component as default
-export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
+export default function RootLayout({ children }: RootLayoutProps) {
   // Returning JSX
   return (
     <html suppressHydrationWarning lang="en">

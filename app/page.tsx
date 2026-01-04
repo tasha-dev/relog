@@ -7,10 +7,9 @@ import Hero from "@/component/section/home/hero";
 import HowItWorks from "@/component/section/home/howItWorks";
 import KeyBenefits from "@/component/section/home/keyBenefits";
 import PerfectFor from "@/component/section/home/perfectFor";
-import { JSX } from "react";
 
 // Creating and exporting Home page as default
-export default function HomePage(): JSX.Element {
+export default function HomePage() {
   // Returning JSX
   return (
     <div className="space-y-4">

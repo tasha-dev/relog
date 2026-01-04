@@ -1,9 +1,6 @@
-// Codes by mahdi tash
-// Importing part
-import { JSX } from "react";
-
+// Codes by mahdi tasha
 // Creating and exporting Footer component as default
-export default function Footer(): JSX.Element {
+export default function Footer() {
   // Returning JSX
   return (
     <footer className="bg-foreground/5 border-t border-foreground/10 w-dvw">
