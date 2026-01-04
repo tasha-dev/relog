@@ -39,27 +39,22 @@ export default function GenerateForm({
 
   // Defining submit handler
   const onSubmit: SubmitHandler<formType> = async (data) => {
-    await GenerateNote({
-      onStatusChange,
-      data: {
-        repoUrl: data.repoUrl,
-        title: data.title,
-      },
-    })
-      .then(() => {
-        toast.success(
-          "Your Release Notes are Ready. Review, edit, and export below",
-        );
-      })
-      .catch(() => {
-        toast.error(
-          "An unexpected error occurred during note generation. Please try again or use different instructions.",
-        );
+    try {
+      await GenerateNote({
+        onStatusChange,
+        data: {
+          repoUrl: data.repoUrl,
+          title: data.title,
+        },
       });
-
-    // toast.error("The provided URL does not appear to be a valid public GitHub repository.")
-    // toast.error("Repository not found or private. Please ensure the URL is correct and the repository is public.")
-    // toast.error("We’re temporarily unable to fetch data from GitHub. Please try again in a moment.")
+      toast.success(
+        "Your Release Notes are Ready. Review, edit, and export below",
+      );
+    } catch {
+      toast.error(
+        "An unexpected error occurred during note generation. Please try again or use different instructions.",
+      );
+    }
   };
 
   // Returning JSX

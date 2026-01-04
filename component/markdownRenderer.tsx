@@ -3,7 +3,7 @@
 "use client";
 
 // Importing part
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import ShinyTextAnimation from "./shinyTextAnimation";
 import { MarkdownRenderProps } from "@/type/component";
 import { useEditor, EditorContent } from "@tiptap/react";
